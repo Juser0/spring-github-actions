@@ -1,10 +1,18 @@
 package com.deploy.todo.user;
 
 import com.deploy.todo.common.DtoMapper;
+import static com.deploy.todo.user.UserResponseDto.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
-public interface UserResponseMapper extends DtoMapper<UserResponseDto.UserCreateResponseDto, User> {
-    UserResponseMapper MAPPER = Mappers.getMapper(UserResponseMapper.class);
+public interface UserResponseMapper {
+    @Mapper
+    public interface CreateResponseMapper extends DtoMapper<UserCreateResponseDto, User> {
+        CreateResponseMapper MAPPER = Mappers.getMapper(CreateResponseMapper.class);
+    }
+
+    @Mapper
+    public interface UpdateResponseMapper extends DtoMapper<UserUpdateResponseDto, User> {
+        UpdateResponseMapper MAPPER = Mappers.getMapper(UpdateResponseMapper.class);
+    }
 }

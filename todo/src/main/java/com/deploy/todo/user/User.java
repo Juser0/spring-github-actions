@@ -1,5 +1,6 @@
 package com.deploy.todo.user;
 
+import com.deploy.todo.common.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,10 +10,10 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class User {
+public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String name;
 
@@ -22,10 +23,6 @@ public class User {
 
     public void updateName(String name) {
         this.name = name;
-    }
-
-    public void updateEmail(String email) {
-        this.email = email;
     }
 
     public void updateAge(int age) {

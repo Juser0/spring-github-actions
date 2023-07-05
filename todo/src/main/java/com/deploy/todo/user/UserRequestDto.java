@@ -1,12 +1,10 @@
 package com.deploy.todo.user;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 
 public class UserRequestDto {
@@ -15,11 +13,11 @@ public class UserRequestDto {
     @Builder
     public static class UserCreateRequestDto {
 
-        @NotEmpty
+        @NotBlank
         private String name;
 
         @Email
-        @NotEmpty
+        @NotBlank
         private String email;
 
         @Positive
@@ -28,7 +26,7 @@ public class UserRequestDto {
 
     @Getter
     public static class UserUpdateRequestDto {
-        @NotEmpty
+        @NotBlank
         private String name;
 
         @Positive
