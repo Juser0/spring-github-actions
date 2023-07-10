@@ -66,13 +66,10 @@ jobs:
       - name: Install Snyk CLI
         run: npm install -g snyk
 
-      - name: Authenticate with Snyk
-        run: |
-          echo "SNYK_TOKEN=${{ secrets.SNYK_API_TOKEN }}" >> $GITHUB_ENV
-          snyk auth
-
       - name: SAST Scan
         run: snyk test --all-projects --json | tee snyk_results.json
+        env:
+          SYNK_TOKEN: ${{ secrets.SYNK_API_TOKEN }}
 
       - name: Upload Snyk results
         uses: actions/upload-artifact@v3
