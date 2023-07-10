@@ -35,7 +35,7 @@ jobs:
         
       - name: Grant execute permission for gradlew
         run: |
-          cd Development/todo
+          cd spring-github-actions/Development/todo
           chmod +x gradlew
 
       - name: Build with Gradle
