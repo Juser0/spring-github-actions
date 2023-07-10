@@ -1,4 +1,25 @@
 spring:
-  profiles:
-    active:
-      - dev
+  main:
+    allow-bean-definition-overriding: 'true'
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/exampleTodo?createDatabaseIfNotExist=true
+  jpa:
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: 'true'
+    repositories:
+      enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+springboot:
+  jwt:
+    secret: wlqdprkrhtlvdjdy!@#
+server:
+  port: 8080
