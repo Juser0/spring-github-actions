@@ -68,7 +68,7 @@ jobs:
 
       - name: Authenticate with Snyk
         run: |
-          export SNYK_TOKEN=${{ secrets.SNYK_API_TOKEN }}
+          export "SNYK_TOKEN=${{ secrets.SNYK_API_TOKEN }}"
           snyk auth
 
       - name: SAST Scan
