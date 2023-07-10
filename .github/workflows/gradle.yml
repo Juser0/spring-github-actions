@@ -34,12 +34,10 @@ jobs:
           distribution: 'temurin'
         
       - name: Grant execute permission for gradlew
-        run: |
-          cd spring-github-actions/todo
-          chmod +x gradlew
+        run: chmod +x spring-github-actions/todo/gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: spring-github-actions/todo/gradlew build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
