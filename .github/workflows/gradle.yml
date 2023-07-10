@@ -40,14 +40,13 @@ jobs:
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 8.1.1
+          gradle-version: 8.2
           arguments: build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
           name: build-artifact
-          path: build/libs
         
   sast:
     name: Static Application Security Testing with Synk
@@ -75,7 +74,7 @@ jobs:
           name: snyk-results
           path: snyk_results.json
 
-  process-results:
+  sast-results:
     name: Process Snyk Results
     runs-on: ubuntu-latest
     needs: [ sast ]
