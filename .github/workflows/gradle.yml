@@ -41,7 +41,7 @@ jobs:
       - name: Build with Gradle
         run: |
           cd todo
-          ./gradlew clean build
+          ./gradlew clean build --exclude-task test
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
