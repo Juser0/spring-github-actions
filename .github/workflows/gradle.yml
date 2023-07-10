@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-artifact
-          path: build/
+          path: build/libs
         
   sast:
     name: Static Application Security Testing with Synk
