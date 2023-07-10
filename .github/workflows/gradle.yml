@@ -67,8 +67,10 @@ jobs:
         run: npm install -g snyk
 
       - name: Authenticate with Snyk
+        env:
+          token: ${{ secrets.SNYK_API_TOKEN }}
         run: |
-          export `SNYK_TOKEN=${{ secrets.SNYK_API_TOKEN }}`
+          export `SNYK_TOKEN=$token`
           snyk auth
 
       - name: SAST Scan
