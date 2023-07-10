@@ -67,9 +67,7 @@ jobs:
         run: npm install -g snyk
 
       - name: SAST Scan
-        run: snyk test --all-projects --all-sub-projects --json | tee snyk_results.json
-        env:
-          SYNK_TOKEN: ${{ secrets.SYNK_API_TOKEN }}
+        run: snyk test --all-projects --json --api-token ${{ secrets.SNYK_API_TOKEN }} | tee snyk_results.json
 
       - name: Upload Snyk results
         uses: actions/upload-artifact@v3
