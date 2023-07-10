@@ -69,7 +69,7 @@ jobs:
       - name: Authenticate with Snyk
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_API_TOKEN }}
-        run: snyk auth $SNYK_TOKEN
+        run: snyk auth SNYK_TOKEN
 
       - name: SAST Scan
         run: snyk test --all-projects --json | tee snyk_results.json
