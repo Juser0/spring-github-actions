@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: build-artifact
-          path: build/libs/
+          path: todo/build/libs/todo-0.0.1-SNAPSHOT.jar
         
   sast:
     name: Static Application Security Testing with Synk
